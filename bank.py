@@ -59,8 +59,7 @@ min_value=0, step=100)
         elif not pin.isdigit() or len(pin) != 4: 
             st.warning("PIN must be a 4-digit number.") 
         else: 
-            st.session_state.account = 
-BankAccount(name.strip(), pin, initial_balance) 
+            st.session_state.account = BankAccount(name.strip(), pin, initial_balance) 
             print(st.session_state.account) 
             st.success(f"Account created for {name} with ₹{initial_balance}") 
             st.info("Go to 'Login' page from the sidebar to access ATM services.") 
@@ -104,8 +103,7 @@ min_value=0, step=100, key="dep")
         elif action == "Withdraw": 
             amount = st.number_input("Enter withdrawal amount", min_value=0, step=100, key="with") 
             if st.button("Withdraw"): 
-                st.info(st.session_state.account.withdraw(amoun
- t)) 
+                st.info(st.session_state.account.withdraw(amount)) 
  
         elif action == "Check Balance": 
             st.success(f"Your current balance is ₹{st.session_state.account.get_balance()}") 
